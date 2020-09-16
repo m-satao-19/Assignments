@@ -72,6 +72,13 @@ public class Product {
 	public void setProductQuantity(int productQuantity) {
 		this.productQuantity = productQuantity;
 	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		//return super.toString();
+		return super.toString()+this.productName;
+	}
 	
 	
 

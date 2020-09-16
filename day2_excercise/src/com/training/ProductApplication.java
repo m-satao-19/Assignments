@@ -29,7 +29,8 @@ public class ProductApplication {
 		for(Product product: productArray) {
 			System.out.println(product.getProductName()+" = "+(1-product.getProductDiscount())*product.getProductQuantity()*product.getRatePerUnit());
 		}
-
+		System.out.println();
+		System.out.println(tv);
 	}
 
 }

@@ -30,7 +30,8 @@ public class ManageProduct {
 	
 	public void showProductList(Product[] productList) {
 		for(int i=0;i<productList.length;i++) {
-			System.out.println("Product "+i+" is  "+productList[i].getProductName());
+			//System.out.println("Product "+i+" is  "+productList[i].getProductName());
+			System.out.println(productList[i]);
 		}
 	}
 	
