@@ -5,6 +5,8 @@ public class Product {
 	private String productName;
 	private double ratePerUnit;
 	private int productType;
+	private double productDiscount;
+	private int productQuantity;
 
 	public Product() {
 		super();
@@ -19,6 +21,17 @@ public class Product {
 		this.productType = productType;
 	}
 	
+	public Product(int productId, String productName, double ratePerUnit, int productType, double productDiscount,
+			int productQuantity) {
+		super();
+		this.productId = productId;
+		this.productName = productName;
+		this.ratePerUnit = ratePerUnit;
+		this.productType = productType;
+		this.productDiscount = productDiscount;
+		this.productQuantity = productQuantity;
+	}
+
 	public int getProductId() {
 		return productId;
 	}
@@ -43,6 +56,21 @@ public class Product {
 
 	public void setProductType(int productType) {
 		this.productType = productType;
+	}
+	public double getProductDiscount() {
+		return productDiscount;
+	}
+
+	public void setProductDiscount(double productDiscount) {
+		this.productDiscount = productDiscount;
+	}
+
+	public int getProductQuantity() {
+		return productQuantity;
+	}
+
+	public void setProductQuantity(int productQuantity) {
+		this.productQuantity = productQuantity;
 	}
 	
 	
