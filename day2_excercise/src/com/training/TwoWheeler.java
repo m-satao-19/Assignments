@@ -11,11 +11,14 @@ public class TwoWheeler extends VehicleInsurance {
 	@Override
 	public double calculatePremium() {
 		// TODO Auto-generated method stub
+		double premium=0.0;
 		if(2020-this.yearOfManufacture<2) {
-			return 0.5*this.vehicleCost;
+			premium= 0.5*this.vehicleCost;
 		}
 		else 
-			return 0.6*this.vehicleCost;
+			premium= 0.6*this.vehicleCost;
+		
+		return premium;
 	}
 	
 

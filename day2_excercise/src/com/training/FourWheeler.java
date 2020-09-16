@@ -11,11 +11,13 @@ public class FourWheeler extends VehicleInsurance {
 	@Override
 	public double calculatePremium() {
 		// TODO Auto-generated method stub
+		double premium=0.0;
 		if(2020-this.yearOfManufacture<2) {
-			return 0.4*this.vehicleCost;
+			premium= 0.4*this.vehicleCost;
 		}
 		else 
-			return 0.5*this.vehicleCost;
+			premium= 0.5*this.vehicleCost;
+		return premium;
 	}
 	
 }
