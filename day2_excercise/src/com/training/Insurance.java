@@ -47,8 +47,9 @@ public class Insurance {
 		if(this.age<25) {
 			premium= 0.6*this.insuredAmount;
 		}
-		else 
+		else {
 			premium= 0.7*this.insuredAmount;
+		}
 		
 		return premium;
 		
