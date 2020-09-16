@@ -8,9 +8,9 @@ public class ProductApplication {
 		Product tv = new Product(101,"LED Plasma",51000.00,2);
 		ManageProduct mgr = new ManageProduct();
 		double d = mgr.calculateDiscount(tv);
-		double taxPc = mgr.calculateTax(tv);
+		double taxPercent = mgr.calculateTax(tv);
 		System.out.println("Discount price for tv = "+(1-d)*tv.getRatePerUnit());
-		System.out.println("Tax Percent for tv = "+taxPc);
+		System.out.println("Tax Percent for tv = "+taxPercent);
 
 	}
 
