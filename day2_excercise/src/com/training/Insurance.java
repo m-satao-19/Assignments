@@ -1,10 +1,11 @@
 package com.training;
 
 public class Insurance {
-	private int policuNumber;
-	private String policyHolder;
-	private double insuredAmount;
-	private int age;
+	public int policuNumber;
+	public String policyHolder;
+	public double insuredAmount;
+	public int age;
+	
 	public int getAge() {
 		return age;
 	}
@@ -42,11 +43,14 @@ public class Insurance {
 	}
 	
 	public double calculatePremium() {
+		double premium=0.0;
 		if(this.age<25) {
-			return 0.6*this.insuredAmount;
+			premium= 0.6*this.insuredAmount;
 		}
 		else 
-			return 0.7*this.insuredAmount;
+			premium= 0.7*this.insuredAmount;
+		
+		return premium;
 		
 	}
 }
