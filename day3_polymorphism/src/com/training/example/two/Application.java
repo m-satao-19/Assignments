@@ -21,6 +21,6 @@ public class Application {
 				System.out.println("Invalid choice (1-3)");
 			}
 		}while(selected==null);
-		
+		sc.close();
 	}
 }
