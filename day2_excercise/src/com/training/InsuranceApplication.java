@@ -14,9 +14,9 @@ public class InsuranceApplication {
 		System.out.println();
 		System.out.println("Premium for Swift  "+swift.calculatePremium()+" , "+swift.getYearOfManufacture());
 		System.out.println();
-		System.out.println("Premium for Swift  "+access.calculatePremium()+" , "+access.getYearOfManufacture());
+		System.out.println("Premium for Access  "+access.calculatePremium()+" , "+access.getYearOfManufacture());
 		System.out.println();
-		System.out.println("Premium for Swift  "+maruti.calculatePremium()+" , "+maruti.getYearOfManufacture());
+		System.out.println("Premium for Maruti  "+maruti.calculatePremium()+" , "+maruti.getYearOfManufacture());
 	}
 
 }
