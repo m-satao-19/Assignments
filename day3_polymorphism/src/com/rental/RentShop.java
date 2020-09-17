@@ -18,10 +18,11 @@ public Item getItem(int key, String Model) {
 		}
 	}
 	
-	public void printEstimation(Item item, int noDays) {
+	public double printEstimation(Item item, int noDays) {
 		//System.out.println(polyAuto.APPNAME);
 		System.out.println(item.getModel());
-		System.out.println(item.calculateRentPrice(noDays));
+		//System.out.println(item.calculateRentPrice(noDays));
+		return item.calculateRentPrice(noDays);
 	}
 	
 }
