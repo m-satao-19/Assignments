@@ -1,5 +1,6 @@
 package com.rental;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.rental.Computer;
@@ -12,6 +13,7 @@ public class ItemApplication {
 		Scanner sc = new Scanner(System.in);
 		RentShop helloShop = new RentShop();
 		Item item =null;
+		ArrayList<Item> myList = new ArrayList<Item>();
 		int key =0;
 		double cost=0.0;
 		while(key!=3) {
@@ -29,6 +31,7 @@ public class ItemApplication {
 		    String Model = sc.nextLine();
 		    
 			item = helloShop.getItem(key, Model);
+			myList.add(item);
 			
 			if(item!=null) {
 				System.out.println("rent is ");
@@ -40,6 +43,10 @@ public class ItemApplication {
 			key = sc.nextInt();
 		}
 		System.out.println("Final cost = "+cost);
+		System.out.println("Products are -");
+		for(Item temp: myList) {
+			System.out.println(temp.getModel());
+		}
 		sc.close();
 	}
 }

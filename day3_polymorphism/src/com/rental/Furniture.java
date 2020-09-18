@@ -27,12 +27,4 @@ public class Furniture implements Item{
 		return this.furnitureModel;
 	}
 
-	@Override
-	public double getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
-	
-
 }

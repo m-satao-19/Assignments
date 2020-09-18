@@ -10,6 +10,10 @@ public class Application {
 		Billing bill = new Billing();
 		bill.printFees(rajesh);
 		bill.printFees(sharma);
+		
+		WrapperStatic obj = new WrapperStatic();
+		obj.parse("12");
+		obj.useValueOf("10");
 	}
 
 }
