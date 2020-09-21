@@ -17,21 +17,18 @@ public class BusinessService {
 		PrintWriter writer=null;
 		try {
 			writer = new PrintWriter(new FileWriter(new File("card_details"),flag));
-		} catch (FileNotFoundException e) {
-			// TODO: handle exception
-			System.err.println(e.getMessage());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try {
 			for(int i=0;i<card.length;i++) {
 				writer.println(card[i].toString());
 			}
 			stored=true;
-		} catch (Exception e) {
+		} catch (FileNotFoundException e) {
 			// TODO: handle exception
-			System.err.println("error  "+e.getMessage());
+			System.out.println("Noe here error..");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Null exception");
+			e.printStackTrace();
 		}
 		finally {
 			writer.close();
