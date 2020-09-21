@@ -1,7 +1,13 @@
 package com.training;
 
-public class CreditCard {
+import java.io.Serializable;
 
+public class CreditCard implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 11L;
 	private long cardNumber;
 	private long accountNumber;
 	private String cardHolderName;
@@ -55,7 +61,7 @@ public class CreditCard {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return cardNumber+" "+cardHolderName+" "+accountNumber;
+		return cardNumber+" "+cardHolderName+" "+accountNumber+" "+cardLimit;
 	}
 	
 	

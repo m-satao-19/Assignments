@@ -19,9 +19,7 @@ public class ClientApplication {
 		CreditCard cc[]=service.getDetails();
 		
 		for(int i=0;i<2;i++) {
-			System.out.println(cc[i].getCardNumber());
-			System.out.println(cc[i].getAccountNumber());
-			System.out.println(cc[i].getCardHolderName());
+			System.out.println(cc[i]);
 		}
 		
 		File f= new File("C:/Users/Madhura/Desktop/iwp_cms/card_details");
@@ -30,9 +28,7 @@ public class ClientApplication {
 		
 		CreditCard cc2[]=service.getDetails(f);
 		for(int i=0;i<2;i++) {
-			System.out.println(cc2[i].getCardNumber());
-			System.out.println(cc2[i].getAccountNumber());
-			System.out.println(cc2[i].getCardHolderName());
+			System.out.println(cc2[i]);
 		}
 		System.out.println("Done");
 	}

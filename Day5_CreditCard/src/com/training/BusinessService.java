@@ -83,7 +83,8 @@ public class BusinessService {
 				cc[i]=new CreditCard();
 				cc[i].setCardNumber(Long.parseLong(temp[0]));
 				cc[i].setCardHolderName(temp[1]);
-				cc[i++].setAccountNumber(Long.parseLong(temp[2]));
+				cc[i].setAccountNumber(Long.parseLong(temp[2]));
+				cc[i++].setCardLimit(Integer.parseInt(temp[3]));
 			}
 			    
 		} catch (IOException e) {
@@ -112,7 +113,8 @@ public class BusinessService {
 				cc[i]=new CreditCard();
 				cc[i].setCardNumber(Long.parseLong(temp[0]));
 				cc[i].setCardHolderName(temp[1]);
-				cc[i++].setAccountNumber(Long.parseLong(temp[2]));
+				cc[i].setAccountNumber(Long.parseLong(temp[2]));
+				cc[i++].setCardLimit(Integer.parseInt(temp[3]));
 			}
 			    
 		} catch (IOException e) {
