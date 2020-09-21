@@ -15,7 +15,7 @@ public class MyCustomException extends Exception {
 	public String getMessage() {
 		// TODO Auto-generated method stub
 		//return super.getMessage();
-		return "My custom exception  "+myMessage+"  "+super.getMessage();
+		return "My custom exception  "+myMessage+"  "+exc.getMessage();
 	}
 
 	

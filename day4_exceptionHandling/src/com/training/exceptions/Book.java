@@ -11,23 +11,24 @@ public class Book {
 		this.bookId = bookId;
 		try {
 			if(bookName.length()==0) {
-				throw new MyCustomException("Book name required", new Throwable());
+				throw new MyCustomException("Book name required", new NullPointerException());
 			}
+			this.bookName=bookName;
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.err.println(e.getMessage());
 		}
-		this.bookName = bookName;
+		
 		this.bookAuthor = bookAuthor;
 		try {
 			if(bookPrice<100 || bookPrice>500) {
 				throw new RangeCheck("Check book price");
 			}
+			this.bookPrice = bookPrice;
 		} catch (RangeCheck e) {
 			// TODO: handle exception
 			System.err.println(e.getMessage());
 		}
-		this.bookPrice = bookPrice;
 	}
 	public String getBookId() {
 		return bookId;
@@ -39,10 +40,21 @@ public class Book {
 		return bookName;
 	}
 	public void setBookName(String bookName) throws MyCustomException {
-		if(bookName.length()==0) {
-			throw new MyCustomException("Book name required", new Throwable());
+		
+		try {
+			this.bookName = bookName;
+		} catch (NullPointerException e) {
+			// TODO: handle exception
+			throw new MyCustomException("Book name required", e);
 		}
-		this.bookName = bookName;
+		
+		
+//		if(bookName.length()==0) {
+//			throw new MyCustomException("Book name required", new Throwable());
+//		}
+//		this.bookName = bookName;
+		
+		
 	}
 	public String getBookAuthor() {
 		return bookAuthor;
