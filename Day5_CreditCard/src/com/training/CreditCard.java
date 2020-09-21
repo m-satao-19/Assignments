@@ -61,7 +61,7 @@ public class CreditCard implements Serializable {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return cardNumber+" "+cardHolderName+" "+accountNumber+" "+cardLimit;
+		return cardNumber+" "+cardHolderName+" "+accountNumber;
 	}
 	
 	

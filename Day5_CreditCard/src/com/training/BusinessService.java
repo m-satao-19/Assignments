@@ -1,24 +1,22 @@
 package com.training;
 
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.ObjectInputStream;
 import java.io.PrintWriter;
 
 public class BusinessService {
 
-	public boolean storeDetails(CreditCard card) {
+	public boolean storeDetails(CreditCard[] card,boolean flag) {
 		boolean stored=false;
 		PrintWriter writer=null;
-		
 		try {
-			writer = new PrintWriter(new FileWriter(new File("card_details"),true));
+			writer = new PrintWriter(new FileWriter(new File("card_details"),flag));
 		} catch (FileNotFoundException e) {
 			// TODO: handle exception
 			System.err.println(e.getMessage());
@@ -27,11 +25,13 @@ public class BusinessService {
 			e.printStackTrace();
 		}
 		try {
-			writer.println(card.toString());
+			for(int i=0;i<card.length;i++) {
+				writer.println(card[i].toString());
+			}
 			stored=true;
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.err.println(e.getMessage());
+			System.err.println("error  "+e.getMessage());
 		}
 		finally {
 			writer.close();
@@ -83,8 +83,7 @@ public class BusinessService {
 				cc[i]=new CreditCard();
 				cc[i].setCardNumber(Long.parseLong(temp[0]));
 				cc[i].setCardHolderName(temp[1]);
-				cc[i].setAccountNumber(Long.parseLong(temp[2]));
-				cc[i++].setCardLimit(Integer.parseInt(temp[3]));
+				cc[i++].setAccountNumber(Long.parseLong(temp[2]));
 			}
 			    
 		} catch (IOException e) {
@@ -113,8 +112,7 @@ public class BusinessService {
 				cc[i]=new CreditCard();
 				cc[i].setCardNumber(Long.parseLong(temp[0]));
 				cc[i].setCardHolderName(temp[1]);
-				cc[i].setAccountNumber(Long.parseLong(temp[2]));
-				cc[i++].setCardLimit(Integer.parseInt(temp[3]));
+				cc[i++].setAccountNumber(Long.parseLong(temp[2]));
 			}
 			    
 		} catch (IOException e) {
@@ -125,8 +123,19 @@ public class BusinessService {
 		return cc;
 	}
 	
-	public boolean deleteDetails() {
-		
+	public boolean deleteDetails(long num) {
+		CreditCard[] cList = this.getDetails();
+		CreditCard[] cList2 = new CreditCard[cList.length-1];
+		int i=0;
+		for(CreditCard card:cList) {
+			if(card!=null) {
+				if(card.getCardNumber()!=num) {
+					cList2[i++]=card;
+				}
+			}
+			
+		}
+		this.storeDetails(cList2,false);
 		return false;
 	}
 }
