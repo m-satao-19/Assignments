@@ -20,12 +20,12 @@ public class ClientApplication {
 		for(int i=0;i<2;i++) {
 			System.out.println(cc[i]);
 		}
-		service.deleteDetails(111111);
-		CreditCard cc2[]=service.getDetails();
-		System.out.println("after delete");
-		for(int i=0;i<1;i++) {
-			System.out.println(cc2[i]);
-		}
+//		service.deleteDetails(111111);
+//		CreditCard cc2[]=service.getDetails();
+//		System.out.println("after delete");
+//		for(int i=0;i<1;i++) {
+//			System.out.println(cc2[i]);
+//		}
 //		File f= new File("C:/Users/Madhura/Desktop/iwp_cms/card_details");
 //		service.storeDetails(cardList[0],f);
 //		service.storeDetails(cardList[1],f);

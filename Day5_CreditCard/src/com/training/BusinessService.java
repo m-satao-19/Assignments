@@ -17,7 +17,9 @@ public class BusinessService {
 		PrintWriter writer=null;
 		try {
 			writer = new PrintWriter(new FileWriter(new File("card_details"),flag));
+			System.out.println(writer);
 			for(int i=0;i<card.length;i++) {
+				System.out.println(card);
 				writer.println(card[i].toString());
 			}
 			stored=true;
