@@ -42,21 +42,31 @@ public class SahyadriHospital implements HospitalServices {
 
 	@Override
 	public void removeAppoint(String pName, String dName) {
+		
+		Doctor doc =null;
+		
 		for(Doctor doctor: docList) {
 			if(doctor.getDocName().equalsIgnoreCase(dName)) {
-				if(this.appointments.containsKey(doctor)) {
-					ArrayList<Patient> pList = appointments.get(doctor);
-					for(Patient pat:pList) {
-						if(pat.getPatName().equalsIgnoreCase(pName)) {
-							pList.remove(pat);
-							System.out.println("Appointment removed");
-							return;
-						}
-					}
-				}
+				doc=doctor;
 			}
 		}
-		System.out.println("Appointment not found");
+		if(doc!=null) {
+			if(this.appointments.containsKey(doc)) {
+				ArrayList<Patient> pList = appointments.get(doc);
+				for(Patient pat:pList) {
+					if(pat.getPatName().equalsIgnoreCase(pName)) {
+						pList.remove(pat);
+						System.out.println("Appointment removed");
+						return;
+					}
+				}
+				System.out.println("Patient not found");
+			}
+		}
+		else {
+			System.out.println("Doctor not found");
+		}
+		//System.out.println("Appointment not found");
 	}
 
 	@Override
@@ -80,6 +90,9 @@ public class SahyadriHospital implements HospitalServices {
 			}
 			System.out.println("Appointment made");
 			return;
+		}
+		else {
+			System.out.println("Doctor not found");
 		}
 	}
 
