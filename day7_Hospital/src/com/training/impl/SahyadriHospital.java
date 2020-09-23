@@ -9,6 +9,17 @@ public class SahyadriHospital implements HospitalServices {
 	
 	ArrayList<Doctor> docList = new ArrayList<>();
 	HashMap<Doctor,ArrayList<Patient>> appointments = new HashMap<>();
+	
+	
+	private Doctor checkDoctor(String docName) {
+		for(Doctor doctor: docList) {
+			if(doctor.getDocName().equalsIgnoreCase(docName)) {
+				//doc=doctor;
+				return doctor;
+			}
+		}
+		return null;
+	}
 
 	@Override
 	public void addDoctor(String docName, int docId) {
@@ -43,13 +54,8 @@ public class SahyadriHospital implements HospitalServices {
 	@Override
 	public void removeAppoint(String pName, String dName) {
 		
-		Doctor doc =null;
+		Doctor doc =checkDoctor(dName);
 		
-		for(Doctor doctor: docList) {
-			if(doctor.getDocName().equalsIgnoreCase(dName)) {
-				doc=doctor;
-			}
-		}
 		if(doc!=null) {
 			if(this.appointments.containsKey(doc)) {
 				ArrayList<Patient> pList = appointments.get(doc);
@@ -72,13 +78,8 @@ public class SahyadriHospital implements HospitalServices {
 	@Override
 	public void makeAppointment(String docName, String pName) {
 		
-		Doctor doc =null;
+		Doctor doc =checkDoctor(docName);
 		Patient pat = new Patient(pName);
-		for(Doctor doctor: docList) {
-			if(doctor.getDocName().equalsIgnoreCase(docName)) {
-				doc=doctor;
-			}
-		}
 		if(doc!=null) {
 			if(this.appointments.containsKey(doc)) {
 				appointments.get(doc).add(pat);
